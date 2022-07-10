@@ -10,7 +10,7 @@ public class Demo {
     }
 
 
-    // Method 2
+
     public static void sleep(int second) {
         try {
             Thread.sleep(second * 1000);
