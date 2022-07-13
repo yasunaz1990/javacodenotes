@@ -1,14 +1,18 @@
 package setup;
 
+
 public class Demo {
 
-    // Method 1
-    public static void main(String[] args) {
-        System.out.println("Hello");
-        sleep(1);
-        System.out.println("student!");
-    }
 
+    private static final String message = "Hello";
+    private static final String audience = "Student!";
+
+
+    public static void main(String[] args) {
+        System.out.println(message);
+        sleep(1);
+        System.out.println(audience);
+    }
 
 
     public static void sleep(int second) {
@@ -17,5 +21,8 @@ public class Demo {
         } catch (InterruptedException ignore) {
             // Ignore
         }
-    }//end
-}
+    }
+
+}//end::class
+
+
