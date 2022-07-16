@@ -1,5 +1,6 @@
 package variable;
 
+
 public class VariableDemo {
 
     public static void main(String[] args) {
@@ -27,6 +28,6 @@ public class VariableDemo {
         System.out.println(words);
         System.out.println(isRaining);
 
-
     }
+
 }
