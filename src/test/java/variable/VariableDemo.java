@@ -20,13 +20,10 @@ public class VariableDemo {
         // Logic   true, false       boolean
         boolean isRaining = true;
 
-
         System.out.println(age);
         System.out.println(pi);
         System.out.println(grade);
         System.out.println(words);
         System.out.println(isRaining);
-
-
     }
 }
