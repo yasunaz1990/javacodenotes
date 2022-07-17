@@ -3,16 +3,9 @@ package comments;
 
 public class CommentDemo {
 
-
     public static void main(String[] args) {
-
+        int AmazingSpeed = 10;
+        int amazingSpeed = 10;
     }
-
-
-    public static void pause() {
-        try { Thread.sleep(1000);}
-        catch (InterruptedException ie) {}
-    }
-
 }
 
