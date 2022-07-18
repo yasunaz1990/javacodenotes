@@ -19,10 +19,10 @@ public class GettingTextInput {
 //        scan.close();
 
         double value = 98.2340;
-        int    num   = 2;
-        int    ret   = (int)(value/num);
+        int num = 2;
+        int ret = (int) (value / num);
 
-        System.out.println( ret );
+        System.out.println(ret);
 
     }
 }

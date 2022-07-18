@@ -27,10 +27,10 @@ public class TestPrompt {
         // 3. Processing the data
         String testConfig = "\n\n";
 
-        testConfig += "Chosen Test  : " + testName       + "\n";
-        testConfig += "Execution Env: " + env            + "\n";
-        testConfig += "Total Tests  : " + totalTests     + "\n";
-        testConfig += "Target ratio : " + ratio          + "\n";
+        testConfig += "Chosen Test  : " + testName + "\n";
+        testConfig += "Execution Env: " + env + "\n";
+        testConfig += "Total Tests  : " + totalTests + "\n";
+        testConfig += "Target ratio : " + ratio + "\n";
         testConfig += "Reports      : " + generateReport + "\n";
 
         System.out.println(testConfig);
