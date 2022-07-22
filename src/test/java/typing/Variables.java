@@ -1,23 +1,24 @@
 package typing;
 
-import org.testng.annotations.Test;
+import java.util.Scanner;
 
 public class Variables {
 
-    @Test
-    public void variableIntro() {
-        // Create varaibles
-        int age = 29;
-        double pi = 3.14;
-        char grade = 'c';
-        String test = "Regression";
-        boolean report = false;
+    public static void main(String[] args) {
+        // 1. Create a scanner
+        Scanner scan = new Scanner(System.in);
 
-        // update variable content
-        age = 30;
-        pi = 3.16;
-        grade = 'A';
-        test = "Smoke";
-        report = true;
+
+        // 2. Get the user input
+        int count = scan.nextInt();
+        double ratio = scan.nextDouble();
+        boolean report = scan.nextBoolean();
+        String testName = scan.nextLine();
+
+        // 3. Close the scanner
+        scan.close();
+        scan.close();
+        scan.close();
+        scan.close();
     }
 }

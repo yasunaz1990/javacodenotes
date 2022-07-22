@@ -18,19 +18,45 @@ public class StringConcatOperatorTest {
     }
 
     @Test
-    public void concatUsage() {
+    public void concatUsage1() {
+        String text = "Hello " + 2022;
+
+        String question = "true?" + "{BTN}->[ONCLICK(/signup)";
+        String fact = "It weights " + 10.32 + "kg";
+
+        int day = 3;
+        String message = "That was" + 5 + " days ago!";
+
+
+        System.out.println(text);
+        System.out.println(question);
+        System.out.println(message);
+        System.out.println(fact);
+    }
+
+
+    @Test
+    public void concatUsage2() {
         String testName = "Smoke";
         int totalNum = 60;
-        int passed = 30;
-        int skipped = 10;
-        int failed = 20;
+        int passNum = 30;
+        double ratio = 48.56;
 
-        String output = "Test executed: "   + testName  + "\n"
-                      + "Total testcases: " + totalNum  + "\n"
-                      + "Total passed: "    + passed    + "\n"
-                      + "Total skipped: "   + skipped   + "\n"
-                      + "Total failed: "    + failed    + "\n";
+        // Empty string
+        String output = "";
 
+        output += "Title : " + testName + "\n";
+        System.out.println(output);
+
+        output += "Tests : " + totalNum + "\n";
+        System.out.println(output);
+
+        output += "Passed: " + passNum + "\n";
+        System.out.println(output);
+
+        output += "Ratio : " + ratio + "\n";
+
+        // Display output
         System.out.println(output);
     }
 }

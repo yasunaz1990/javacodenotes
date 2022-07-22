@@ -15,10 +15,10 @@ public class VariablePracticeTest {
     // Data Type       Type of data
     //---------------------------------
     // [Data Type] [varname] = [data];
-    //  String           text data
-    //  boolean          logical label
+    //  String      text data
+    //  boolean      logical label
     //  int              whole number
-    // double            decimal number
+    //  double           decimal number
     //  char             letter
 
 
@@ -113,16 +113,13 @@ public class VariablePracticeTest {
 
         sleep(3);
 
-
-
         // ---- Assertion
         Assert.assertEquals(actualBannerText, expectedBanner );
         Assert.assertEquals(actualErrorDisplay, expectedErrorDisplay);
     }
 
 
-
-
+    // You created
     public static void sleep(int s) {
         try {
             Thread.sleep(s * 1000);
