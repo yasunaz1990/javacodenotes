@@ -3,7 +3,6 @@ package operators;
 import org.testng.annotations.Test;
 
 public class IncrementDecrementTest {
-
     @Test
     public void increment() {
         // symbol  ++
@@ -65,5 +64,4 @@ public class IncrementDecrementTest {
 
         System.out.println(ret);
     }
-
 }
