@@ -9,6 +9,5 @@ public class DataTypeDemo {
         System.out.println( 'A'  );    // char
         System.out.println( "Hello There!" ); // String
         System.out.println( true );    // boolean
-
     }
 }
