@@ -90,7 +90,9 @@ public class TypeCastingTest {
 
 
         // 0-9(int)(Math.random() * 10);
+       int a = (int)(Math.random() * 10);
         System.out.println(a);
+
 
         // 0-99
         int b = (int)(Math.random()* 10);
