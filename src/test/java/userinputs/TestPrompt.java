@@ -1,0 +1,42 @@
+package userinputs;
+
+// import com.sun.tools.jdeprscan.scan.Scan;
+
+import java.util.Scanner;
+
+public class TestPrompt {
+
+    public static void main(String[] args) {
+        // 1. Create a scanner
+        Scanner scan = new Scanner(System.in);
+
+        // 2. Prompt for data input & process that input
+        System.out.print("Test Name:  ");
+        String testName = scan.nextLine();
+
+        System.out.print("Test Env: ");
+        String env = scan.nextLine();
+
+        System.out.print("Total Num: ");
+        int totalTests = scan.nextInt();
+
+        System.out.print("Desired Ration: ");
+        double ratio = scan.nextDouble();
+
+        System.out.print("Generate report?: ");
+        boolean generateReport = scan.nextBoolean();
+
+        // 3. Processing the data
+        String testConfig = "";
+
+        testConfig += "Chosen Test  : " + testName + "\n";
+        testConfig += "Execution Env: " + env + "\n";
+        testConfig += "Total Tests  : " + totalTests + "\n";
+        testConfig += "Target Ratio : " + ratio + "\n";
+        testConfig += "Reports      : " + generateReport + "\n";
+
+
+        System.out.println(testConfig);
+
+    }
+}
