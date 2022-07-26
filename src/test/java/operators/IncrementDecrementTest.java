@@ -66,6 +66,5 @@ public class IncrementDecrementTest {
         int x = 20;
         int ret = ++n * x-- + 100;
         System.out.println(ret);
-
     }
 }
