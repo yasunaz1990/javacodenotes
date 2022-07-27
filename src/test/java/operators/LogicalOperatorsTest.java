@@ -51,7 +51,7 @@ public class LogicalOperatorsTest {
     }
 
     @Test
-    public boolean randomBool() {
+    public static boolean randomBool() {
         int randomNumber = (int)(Math.random() * 2);
         boolean result = false;
         if (randomNumber == 1) {

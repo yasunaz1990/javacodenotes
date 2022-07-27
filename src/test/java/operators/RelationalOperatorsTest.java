@@ -1,7 +1,8 @@
 package operators;
 
 import org.testng.annotations.Test;
-//import static operators.LogicalOperatorsTest.
+
+import static operators.LogicalOperatorsTest.randomBool;
 
 public class RelationalOperatorsTest {
 
@@ -70,7 +71,7 @@ public class RelationalOperatorsTest {
         // symbol:  !=  Not Equal To
         // n != m   --> {true || false}
         boolean answer = 5 != 5;
-        System.out.println(true);
+        System.out.println(answer);
 
         answer = 9 != 1;
         System.out.println(answer);
@@ -82,8 +83,10 @@ public class RelationalOperatorsTest {
     @Test
     public void flowOfExecution() {
         int age = (int)(Math.random() * 100);
+        boolean jake = randomBool();
 
         System.out.println("You are "+age+" years old.");
+        System.out.println(jake);
         System.out.println("line 1");
         System.out.println("line 2");
 
