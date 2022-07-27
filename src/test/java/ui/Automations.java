@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.Set;
 
 
@@ -23,6 +24,7 @@ public class Automations {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        waits = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     /**
@@ -107,7 +109,6 @@ public class Automations {
     }
 
 
-
     /**
      * Use this method to invoke a user click on the element
      * extractable by the provided location ( coordinate )
@@ -117,6 +118,7 @@ public class Automations {
     public static void click(By location) {
         WebElement element =
                 waits.until(ExpectedConditions.elementToBeClickable(location));
+        highlight(location);
         element.click();
     }
 
@@ -148,6 +150,28 @@ public class Automations {
     }
 
     /**
+     * Use this method to illuminate the text background
+     *
+     * @param location
+     */
+    public static void lit(By location) {
+        WebElement element =
+                waits.until(ExpectedConditions.visibilityOfElementLocated(location));
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].setAttribute('style', ' background-color: rgb(233, 242, 253);');", element);
+        sleepLimi(500);
+        js.executeScript("arguments[0].setAttribute('style', ' background-color: white');", element);
+        sleepLimi(500);
+        js.executeScript("arguments[0].setAttribute('style', ' background-color: rgb(233, 242, 253);');", element);
+        sleepLimi(500);
+        js.executeScript("arguments[0].setAttribute('style', ' background-color: white');", element);
+        sleepLimi(500);
+        js.executeScript("arguments[0].setAttribute('style', ' background-color: rgb(233, 242, 253);');", element);
+
+    }
+
+
+    /**
      * Highlights the given element
      * @param element
      */
@@ -166,6 +190,14 @@ public class Automations {
     public static void sleep(int sec) {
         try {
             Thread.sleep(sec * 1000);
+        } catch (InterruptedException ignore) {
+            // DO-NOTHING
+        }
+    }
+
+    private static void sleepLimi(int mili) {
+        try {
+            Thread.sleep(mili );
         } catch (InterruptedException ignore) {
             // DO-NOTHING
         }
