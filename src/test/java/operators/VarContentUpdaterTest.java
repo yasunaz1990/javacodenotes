@@ -17,7 +17,9 @@ public class VarContentUpdaterTest
         System.out.println(number);
 
         //old way
-        int = 30l
+        int age = 30;
+
+
         age = age + 10;
         System.out.println(age); //30
     }
