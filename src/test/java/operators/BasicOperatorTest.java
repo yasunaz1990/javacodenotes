@@ -1,6 +1,7 @@
 package operators;
 
 import org.testng.annotations.Test;
+import org.w3c.dom.ls.LSOutput;
 
 import java.sql.SQLOutput;
 
@@ -48,20 +49,18 @@ public class BasicOperatorTest {
         int m = 20;
         System.out.println(n * m);
     }
-    @Test
+   @Test
     public void modulus() {
-      // symbol %
+       // symbol %
        int n = 13;
-     int b = 5;
-     int ret = n % b;
-        System.out.println(ret);
-    }
-  @Test
-  public void detectingEvenOddNumber() {
-        int res = 1972413;
-        int ret = res % 2; // --> R:{0,1} 0:even, 1:odd
-      System.out.println(ret);
-
+       int b = 5;
+       int ret = n % b;
+       System.out.println(ret);
   }
-
+@Test
+    public void detectingEvenOddNumber() {
+        int res = 1972413;
+        int ret = res % 2; // --> R: {0,1}
+    System.out.println(ret);
+}
 }
