@@ -4,6 +4,9 @@ import com.github.javafaker.Faker;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -23,6 +26,43 @@ public class Automations {
     public static void openBrowser() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        waits = new WebDriverWait(driver, Duration.ofSeconds(10));
+    }
+
+    /**
+     * Use this method to open the Chrome browser. This method must be called
+     * before any of the automation commands listed in this class
+     */
+    public static void openBrowser(String choice) {
+        boolean isChrome = choice.equalsIgnoreCase("chrome");
+        boolean isFirefox = choice.equalsIgnoreCase("firefox");
+        boolean isEdge = choice.equalsIgnoreCase("edge");
+        boolean isSafari = choice.equalsIgnoreCase("safari");
+
+
+
+        if(isChrome) {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+        }
+        else if(isFirefox) {
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver();
+        }
+        else if(isEdge) {
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
+        }
+        else if(isSafari) {
+            WebDriverManager.safaridriver().setup();
+            driver = new SafariDriver();
+        }else {
+            // default
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+        }
+
         driver.manage().window().maximize();
         waits = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
@@ -87,6 +127,17 @@ public class Automations {
                 waits.until(ExpectedConditions.visibilityOfElementLocated(location));
         boolean result = element.isDisplayed();
         return result;
+    }
+
+    /**
+     * Use this method to extract a web-element at given location
+     * @param location
+     * @return web-element
+     */
+    public static WebElement element(By location) {
+        WebElement element =
+                waits.until(ExpectedConditions.visibilityOfElementLocated(location));
+        return element;
     }
 
 
