@@ -30,17 +30,12 @@ public class Automations {
         waits = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    /**
-     * Use this method to open the Chrome browser. This method must be called
-     * before any of the automation commands listed in this class
-     */
+
     public static void openBrowser(String choice) {
-        boolean isChrome = choice.equalsIgnoreCase("chrome");
-        boolean isFirefox = choice.equalsIgnoreCase("firefox");
-        boolean isEdge = choice.equalsIgnoreCase("edge");
-        boolean isSafari = choice.equalsIgnoreCase("safari");
-
-
+        boolean isChrome = choice.equals("chrome");
+        boolean isFirefox = choice.equals("firefox");
+        boolean isSafari = choice.equals("safari");
+        boolean isEdge = choice.equals("edge");
 
         if(isChrome) {
             WebDriverManager.chromedriver().setup();
@@ -50,22 +45,27 @@ public class Automations {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
         }
+        else if(isSafari) {
+            WebDriverManager.safaridriver().setup();
+            driver = new SafariDriver();
+        }
         else if(isEdge) {
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
         }
-        else if(isSafari) {
-            WebDriverManager.safaridriver().setup();
-            driver = new SafariDriver();
-        }else {
-            // default
+        else {
+            System.out.println("You're browser option does not make sense");
+            System.out.println("So please just use Google Chrome");
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         }
 
         driver.manage().window().maximize();
-        waits = new WebDriverWait(driver, Duration.ofSeconds(10));
+
     }
+
+
+
 
     /**
      * Use this method to terminate the driver --> browser

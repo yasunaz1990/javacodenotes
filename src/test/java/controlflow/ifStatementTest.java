@@ -2,6 +2,8 @@ package controlflow;
 
 import org.testng.annotations.Test;
 
+import java.util.Scanner;
+
 public class ifStatementTest {
     /*
        if( condition ) {
@@ -47,5 +49,23 @@ public class ifStatementTest {
         }
 
     }//end::demo3
+
+
+    public static void main(String[] args) {
+        // 1. Create a scanner
+        Scanner scan = new Scanner(System.in);
+
+        // 2. Process & Process
+        System.out.print("Enter a number: ");
+        int inputNum = scan.nextInt();
+
+        // 3. Decision
+        int result = inputNum % 2;  //{0,1}
+
+        if( result == 0) System.out.println("Even number!");
+        else System.out.println("Odd Number");
+
+    }//end::main
+
 
 }//end::class
