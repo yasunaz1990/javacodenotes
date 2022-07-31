@@ -40,7 +40,7 @@ public class VarContentUpdaterTest {
     public void modulusUpdater() {
         // symbol %=
         int number = 10;
-        number %= 3
+        number %= 3;
         System.out.println(number);
     }
     @Test
@@ -53,7 +53,7 @@ public class VarContentUpdaterTest {
 
         int num = 10;
 
-        int emp;
-        emp += 10;
+        //int emp;
+        //emp += 10;
     }
 }
