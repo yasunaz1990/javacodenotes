@@ -30,6 +30,7 @@ public class ChainedIfElseTest {
 
     }
 
+
     @Test
     public void crossBrowser() {
         Automations.openBrowser("safari");

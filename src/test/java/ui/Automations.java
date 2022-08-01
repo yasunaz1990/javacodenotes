@@ -2,7 +2,10 @@ package ui;
 
 import com.github.javafaker.Faker;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -37,23 +40,19 @@ public class Automations {
         boolean isSafari = choice.equals("safari");
         boolean isEdge = choice.equals("edge");
 
-        if(isChrome) {
+        if (isChrome) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
-        }
-        else if(isFirefox) {
+        } else if (isFirefox) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
-        }
-        else if(isSafari) {
+        } else if (isSafari) {
             WebDriverManager.safaridriver().setup();
             driver = new SafariDriver();
-        }
-        else if(isEdge) {
+        } else if (isEdge) {
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
-        }
-        else {
+        } else {
             System.out.println("You're browser option does not make sense");
             System.out.println("So please just use Google Chrome");
             WebDriverManager.chromedriver().setup();
@@ -63,8 +62,6 @@ public class Automations {
         driver.manage().window().maximize();
 
     }
-
-
 
 
     /**
@@ -131,6 +128,7 @@ public class Automations {
 
     /**
      * Use this method to extract a web-element at given location
+     *
      * @param location
      * @return web-element
      */
@@ -196,7 +194,7 @@ public class Automations {
     public static void highlight(By location) {
         WebElement element =
                 waits.until(ExpectedConditions.visibilityOfElementLocated(location));
-        JavascriptExecutor js = (JavascriptExecutor)driver;
+        JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].setAttribute('style', 'border: 3px solid red;');", element);
     }
 
@@ -208,7 +206,7 @@ public class Automations {
     public static void lit(By location) {
         WebElement element =
                 waits.until(ExpectedConditions.visibilityOfElementLocated(location));
-        JavascriptExecutor js = (JavascriptExecutor)driver;
+        JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].setAttribute('style', ' background-color: rgb(233, 242, 253);');", element);
         sleepLimi(500);
         js.executeScript("arguments[0].setAttribute('style', ' background-color: white');", element);
@@ -224,10 +222,11 @@ public class Automations {
 
     /**
      * Highlights the given element
+     *
      * @param element
      */
     public static void highlight(WebElement element) {
-        JavascriptExecutor js = (JavascriptExecutor)driver;
+        JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].setAttribute('style', 'border: 3px solid red;');", element);
     }
 
@@ -248,7 +247,7 @@ public class Automations {
 
     private static void sleepLimi(int mili) {
         try {
-            Thread.sleep(mili );
+            Thread.sleep(mili);
         } catch (InterruptedException ignore) {
             // DO-NOTHING
         }
@@ -256,6 +255,7 @@ public class Automations {
 
     /**
      * Use this method to generate fake test data.
+     *
      * @return faker object
      */
     public static Faker data() {
